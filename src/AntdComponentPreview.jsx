@@ -1444,7 +1444,7 @@ const AntdComponentPreview = () => {
                     }
                     setAiLoading(true);
                     try {
-                      const response = await fetch('/api/coze/v3/chat', {
+                      const response = await fetch('https://api.coze.cn/v3/chat', {
                         method: 'POST',
                         headers: {
                           'Authorization': 'Bearer pat_BgCFWMHVomWC47mvcUiy32MrytXfNnA5hybKC0DLuVwSIhPXvrJ2NgwcATk1zlrv',
@@ -1472,7 +1472,7 @@ const AntdComponentPreview = () => {
                         let completed = false;
                         while (retries < maxRetries && !completed) {
                           await new Promise(resolve => setTimeout(resolve, 1000));
-                          const retrieveResponse = await fetch(`/api/coze/v3/chat/retrieve?conversation_id=${conversation_id}&chat_id=${chat_id}`, {
+                          const retrieveResponse = await fetch(`https://api.coze.cn/v3/chat/retrieve?conversation_id=${conversation_id}&chat_id=${chat_id}`, {
                             headers: {
                               'Authorization': 'Bearer pat_BgCFWMHVomWC47mvcUiy32MrytXfNnA5hybKC0DLuVwSIhPXvrJ2NgwcATk1zlrv',
                             },
@@ -1489,7 +1489,7 @@ const AntdComponentPreview = () => {
                           retries++;
                         }
                         if (completed) {
-                          const messageResponse = await fetch(`/api/coze/v3/chat/message/list?conversation_id=${conversation_id}&chat_id=${chat_id}`, {
+                          const messageResponse = await fetch(`https://api.coze.cn/v3/chat/message/list?conversation_id=${conversation_id}&chat_id=${chat_id}`, {
                             headers: {
                               'Authorization': 'Bearer pat_BgCFWMHVomWC47mvcUiy32MrytXfNnA5hybKC0DLuVwSIhPXvrJ2NgwcATk1zlrv',
                             },
