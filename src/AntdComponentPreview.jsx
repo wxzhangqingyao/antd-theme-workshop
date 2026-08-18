@@ -123,10 +123,10 @@ const { Title, Text, Link, Paragraph } = Typography;
 const { Header, Content, Sider } = Layout;
 
 const themeColors = [
-  { name: '默认', value: '#1677ff', icon: '/logo-antd.svg' },
-  { name: '移动', value: '#0085D0', icon: '/logo-china-mobile.svg' },
-  { name: '联通', value: '#E60027', icon: '/logo-china-unicom.svg' },
-  { name: '电信', value: '#3473F4', icon: '/logo-china-telecom.svg' },
+  { name: '默认', value: '#1677ff', icon: './logo-antd.svg' },
+  { name: '移动', value: '#0085D0', icon: './logo-china-mobile.svg' },
+  { name: '联通', value: '#E60027', icon: './logo-china-unicom.svg' },
+  { name: '电信', value: '#3473F4', icon: './logo-china-telecom.svg' },
 ];
 
 const componentCategories = [
@@ -1447,7 +1447,7 @@ const AntdComponentPreview = () => {
                       const response = await fetch('/api/coze/v3/chat', {
                         method: 'POST',
                         headers: {
-                          'Authorization': 'Bearer pat_3d2loXyzre2PZToxN8LmGri3XE220aDKUE3AjQ3yOGc8ZfLXt8YCpBCBIpp25qKZ',
+                          'Authorization': 'Bearer pat_BgCFWMHVomWC47mvcUiy32MrytXfNnA5hybKC0DLuVwSIhPXvrJ2NgwcATk1zlrv',
                           'Content-Type': 'application/json',
                         },
                         body: JSON.stringify({
@@ -1474,7 +1474,7 @@ const AntdComponentPreview = () => {
                           await new Promise(resolve => setTimeout(resolve, 1000));
                           const retrieveResponse = await fetch(`/api/coze/v3/chat/retrieve?conversation_id=${conversation_id}&chat_id=${chat_id}`, {
                             headers: {
-                              'Authorization': 'Bearer pat_3d2loXyzre2PZToxN8LmGri3XE220aDKUE3AjQ3yOGc8ZfLXt8YCpBCBIpp25qKZ',
+                              'Authorization': 'Bearer pat_BgCFWMHVomWC47mvcUiy32MrytXfNnA5hybKC0DLuVwSIhPXvrJ2NgwcATk1zlrv',
                             },
                           });
                           const retrieveData = await retrieveResponse.json();
@@ -1491,7 +1491,7 @@ const AntdComponentPreview = () => {
                         if (completed) {
                           const messageResponse = await fetch(`/api/coze/v3/chat/message/list?conversation_id=${conversation_id}&chat_id=${chat_id}`, {
                             headers: {
-                              'Authorization': 'Bearer pat_3d2loXyzre2PZToxN8LmGri3XE220aDKUE3AjQ3yOGc8ZfLXt8YCpBCBIpp25qKZ',
+                              'Authorization': 'Bearer pat_BgCFWMHVomWC47mvcUiy32MrytXfNnA5hybKC0DLuVwSIhPXvrJ2NgwcATk1zlrv',
                             },
                           });
                           const messageData = await messageResponse.json();
